@@ -24,46 +24,25 @@ document.getElementById("gadget8").innerHTML=htmlElements[7].innerText;
 
 
 // image slider
-imgsEl = document.querySelectorAll(".slider-container img");
-let currentImg = 2;
-let timeout
+let slideIndex = 0;
+showSlides();
 
-
-
-function next(){
-    currentImg = currentImg +1;
-    clearTimeout(timeout);
-    nextFunction()
-    
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-function prev(){
-    currentImg = currentImg -1;
-    clearTimeout(timeout)
-    nextFunction()
-    
-}
-
-nextFunction();
-function nextFunction(){
-
-    
-   
-    if(currentImg > imgsEl.length){
-        currentImg =1    
-    }
-    else if(currentImg < 1){
-        currentImg = imgsEl.length
-    }
-    document.getElementById("image-container").style.transform=`translateX(-${(currentImg -1) * 1500}px)`;
-    console.log(currentImg -1);
-    timeout=setTimeout(() => {
-        currentImg= currentImg +1;
-        nextFunction()
-        
-    }, 3000);
-    
-}
-
 
 //wish icon
 $(document).ready(function(){

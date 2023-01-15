@@ -58,19 +58,36 @@ Grains and cereal.
 Vegetables.
 Snacks and candy.
         -->
-        <div class="slider-container">
-            <div id="image-container">
-                <img src="https://picsum.photos/id/43/1500/700" alt="1">
-                <img src="https://picsum.photos/id/222/1500/700" alt="1">
-                <img src="https://picsum.photos/id/103/1500/700" alt="1">
-                <img src="https://picsum.photos/id/29/1500/700" alt="1">
-                <img src="https://picsum.photos/id/87/1500/700" alt="1">
-                <img src="https://picsum.photos/id/66/1500/700" alt="1">
-                <img src="https://picsum.photos/id/89/1500/700" alt="1">
-            </div>
-            <i class="fa-solid fa-angles-left" id="btn-prev" onclick="prev()"></i>
-            <i class="fa-solid fa-angles-right" id="btn-next"  onclick="next()"></i>
-        </div><br><br>
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="data:image/jpeg;base64,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" style="width:100%">
+            <div class="text">
+              Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback1, adaptive triggers1 and 3D Audio*, ...</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBG26xNV3X9yAq0_d_LulgBX297Cc-7ke7KA&usqp=CAU" style="width:100%">
+            <div class="text">Get laced up for training, sport and lifestyle with the latest designs of men's shoes and sneakers from Nike.com.</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="data:image/png;base64,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" style="width:100%">
+            <div class="text">Air conditioning, often abbreviated as A/C (US), AC (US), or air con (UK), is the process of removing heat from an enclosed space to achieve a more ...</div>
+          </div>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+          <br><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
         <ul id="myUL">
@@ -142,7 +159,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><b>$369.00</b></p>
+                                        <p class="item-price"><b>369.00</b></p>
                                         <a href="#" class=" cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>
@@ -164,7 +181,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><b>$23.99</b></p>
+                                        <p class="item-price"><b>23.99</b></p>
                                         <a href="#" class=" cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>
@@ -186,7 +203,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><b>$649.00</b></p>
+                                        <p class="item-price"><b>649.00</b></p>
                                         <a href="#" class=" cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>
@@ -208,7 +225,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><b>$250.00</b></p>
+                                        <p class="item-price"><b>250.00</b></p>
                                         <a href="#" class=" cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>
@@ -325,7 +342,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
+                                        <p class="item-price"><strike>400.00</strike> <b>369.00</b></p>
                                         <a href="#" class="cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>
@@ -347,7 +364,7 @@ Snacks and candy.
                                                 <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                             </ul>
                                         </div>
-                                        <p class="item-price"><strike>$25.00</strike> <b>$23.99</b></p>
+                                        <p class="item-price"><strike>25.00</strike> <b>23.99</b></p>
                                         <a href="#" class="cart btn btn-primary">Add to Cart</a>
                                     </div>						
                                 </div>

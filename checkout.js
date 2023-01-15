@@ -24,6 +24,7 @@
         document.getElementById("first_img").src= firstimg;
         if (splittedInput[1] != null){
     document.getElementById("first_div").style.display="block";
+
 };
     }
     catch(err){
@@ -535,10 +536,6 @@ if (game_Input == null){
 if (men_Input == null){
     men_Input.length = 0
 };
-let no_of_items = (splittedInput.length + gadget_input.length + female_input.length + game_input.length + men_input.length) - 5;
-
-document.getElementById("number_of_goods").innerHTML = no_of_items + " Items"
-
 }
 catch(err){
     console.log(err.message)
@@ -574,47 +571,107 @@ catch(err){
   
   
   }
-//increaseing / decreasing the product 
-let number = $('.px-md-3', $(this).parent()).text();
-$(".fa-minus-square").css("visibility",'hidden');
 
 
-$(".fa-plus-square").click(function(event) {
-    $(".fa-minus-square").css("visibility",'visible');
-    console.log("you calicked me ")
+///test
+try{
+    $(document).ready(function() {
     
-  /* Prevent default click action behavior */
-  event.preventDefault();
-  
-  /* Hide the progress container that is a descendant of the saeme
-  anscestor of the download button being clicked */
-  number ++;
-  $('.px-md-3', $(this).parent()).text(number);
-  console.log(number)
-  
-   
-    }); 
-
+       /* Set rates */
+       var taxRate = 0.05;
+       var fadeTime = 300;
     
-$(".fa-minus-square").click(function(event) {
-    if(number == 1){
-       return alert("Error, Product cannot be less than 1")
-      }
-     
-    console.log("you calicked me ")
+       /* Assign actions */
+       $('.pass-quantity input').change(function() {
+         updateQuantity(this);
+       });
     
-  /* Prevent default click action behavior */
-  event.preventDefault();
-  
-  /* Hide the progress container that is a descendant of the saeme
-  anscestor of the download button being clicked */
-  number --;
-   $('.px-md-3', $(this).parent()).text(number);
-  console.log(number)
-  
-   
-    }); 
+       $('.remove-item button').click(function() {
+         removeItem(this);
+       });
+    
+    
+       /* Recalculate cart */
+       function recalculateCart() {
+         var subtotal = 0;
+    
+         /* Sum up row totals */
+         $('.item').each(function() {
+           subtotal += parseFloat($(this).children('.product-line-price').text());
+         });
+    
+         /* Calculate totals */
+         var tax = subtotal * taxRate;
+          total = subtotal + tax;
+    
+         /* Update totals display */
+         $('.totals-value').fadeOut(fadeTime, function() {
+           $('#cart-subtotal').html(subtotal.toFixed(2));
+           $('#cart-tax').html(tax.toFixed(2));
+           $('.cart-total').html(total.toFixed(2));
+           if (total == 0) {
+             $('.checkout').fadeOut(fadeTime);
+           } else {
+             $('.checkout').fadeIn(fadeTime);
+           }
+           $('.totals-value').fadeIn(fadeTime);
+         });
+       }
+    
+    
+       /* Update quantity */
+       function updateQuantity(quantityInput) {
+         /* Calculate line price */
+         var productRow = $(quantityInput).parent().parent();
+         var price = parseFloat(productRow.children('.sss').text());
+         var quantity = $(quantityInput).val();
+         var linePrice = price * quantity;
+    
+         /* Update line price display and recalc cart totals */
+         productRow.children('.product-line-price').each(function() {
+           $(this).fadeOut(fadeTime, function() {
+             $(this).text(linePrice.toFixed(2));
+             recalculateCart();
+             $(this).fadeIn(fadeTime);
+           });
+         });
+       }
+    
+       /* Remove item from cart */
+       function removeItem(removeButton) {
+         /* Remove row from DOM and recalc cart total */
+         var productRow = $(removeButton).parent().parent();
+         productRow.slideUp(fadeTime, function() {
+           productRow.remove();
+           recalculateCart();
+         });
+       }
+    
+     });
+    console.log(total)
+    }
+    
+    catch(err){
+    console.log("working wel")
+    }
 
+//end test    
+
+
+
+
+
+
+lala = document.getElementsByClassName("product-line-price");
+let kl ;
+kl = 0;
+for(let i = 0 ; i < lala.length;i++){
+    
+    kl+= +lala[i].innerText;
+    console.log("one lap complete")
+    console.log(kl)
+    document.getElementById("tot").innerHTML = kl
+}
 
 
 
@@ -629,21 +686,13 @@ function caller(){
     female_product = localStorage.getItem("female-name");
     num = 2348088981691;
     
-     if (index_product == null && gadget_product != null){
-      index_product = " "
-    }
-    else if (gadget_product == null && index_product != null){
-      gadget_product = " ";
-    };
        
   customer = window.prompt("Please Enter your name");
   if (customer == null){
       return alert("Please enter your name to proceed");
       document.getElementById("check").href="checkout.html"
   }
-  else{
-      document.getElementById("check").href="index.html"    
-  }
+ 
       
   
   $("#check").click(function(){
@@ -653,16 +702,32 @@ function caller(){
    $("#female_product_cart").val(`${female_product}`);
    $("#games_product_cart").val(`${games_product}`);
    $("#name").val(`${customer}`);
+   $("#total").val(`${kl}`);
    
   });
 
-
-  if (index_product != null && gadget_product != null){
-    document.getElementById("form").action = "mailto:JetroSupermarket@gmail.com"    
+  if (index_product == null){
+    index_product = " 2"
+  };
+  if (gadget_product == null){
+    gadget_product = " 3";
+  };
+  if (games_product == null){
+    games_product = " 4";
+  };
+  if (men_product == null){
+    men_product = "5 ";
+  };
+  if (female_product == null){
+    female_product = "3 ";
+  };
+ 
+  
+  if (index_product || gadget_product || men_product || female_product || games_product ){
+    document.getElementById("form").action = "mailto:JetroSupermarket@gmail.com";
   }
   else{
-    document.getElementById("form").action ="index.html"
-  }
+      }
 
   
   
@@ -687,5 +752,6 @@ function caller(){
     localStorage.removeItem("price");
     localStorage.removeItem("item");
     localStorage.removeItem("img");
- }
+    document.getElementById("check").style.display="none"
+     }
   
