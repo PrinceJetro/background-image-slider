@@ -32,14 +32,14 @@ let product_price = $('.item-price', $(this).parent()).text();
 let product_img = $(this).parents(".col-sm-3").find(".img-fluid").attr('src');
 
 
-
+ no = window.prompt(`How Many ${product_title} Do You Plan To Purchase? ` )
   alert(`${product_title} has been added to cart`)
   i++;
 
-  product_title_el = w+=product_title + `\n`;
+  product_title_el = w+=product_title + " " + " X " + no + `\n`;
 
-  product_price_el = j+=product_price + ` \n`;
- 
+  product_price_el = j+=(parseInt(j = product_price) * no) + ` \n`;
+delete (no); 
   product_img_el = k += product_img + ` \n`;
   
   
