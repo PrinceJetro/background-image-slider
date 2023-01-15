@@ -1,4 +1,6 @@
 
+
+alert("Please Do Not Forget To Add The Quantity For Each Product In Your Cart")
     // getting  index's product from local variable
     product_name = localStorage.getItem("product-name");
     product_price = localStorage.getItem("product-price");
@@ -579,7 +581,7 @@ try{
     
        /* Set rates */
        var taxRate = 0.05;
-       var fadeTime = 300;
+       var fadeTime =0;
     
        /* Assign actions */
        $('.pass-quantity input').change(function() {
@@ -659,19 +661,23 @@ try{
 
 
 
-
-
-
-lala = document.getElementsByClassName("product-line-price");
-let kl ;
-kl = 0;
-for(let i = 0 ; i < lala.length;i++){
+$('.pass-quantity input').focusout(function() {
+   
+    lala = document.getElementsByClassName("product-line-price");
+    kl = 0;
+    for(let i = 0 ; i < lala.length;i++){
+        
+        kl+= +lala[i].innerText;
+        console.log("one lap complete")
+        console.log(kl)
+        }
+        document.getElementById("tot").innerHTML = kl
     
-    kl+= +lala[i].innerText;
-    console.log("one lap complete")
-    console.log(kl)
-    document.getElementById("tot").innerHTML = kl
-}
+    
+});
+
+
+
 
 
 
@@ -707,27 +713,29 @@ function caller(){
   });
 
   if (index_product == null){
-    index_product = " 2"
+    index_product = " "
   };
   if (gadget_product == null){
-    gadget_product = " 3";
+    gadget_product = " ";
   };
   if (games_product == null){
-    games_product = " 4";
+    games_product = " ";
   };
   if (men_product == null){
-    men_product = "5 ";
+    men_product = " ";
   };
   if (female_product == null){
-    female_product = "3 ";
+    female_product = " ";
   };
  
+  if(index_product === " " && gadget_product === " " && men_product === " " && female_product === " " && games_product === " "){
+    return alert("Please select some good to checkout")
+  }
   
-  if (index_product || gadget_product || men_product || female_product || games_product ){
+  else if (index_product || gadget_product || men_product || female_product || games_product ){
     document.getElementById("form").action = "mailto:JetroSupermarket@gmail.com";
   }
-  else{
-      }
+
 
   
   

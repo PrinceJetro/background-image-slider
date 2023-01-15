@@ -1,26 +1,3 @@
-		// Get the elements to be iterated
-		let htmlElements =
-			document.getElementsByTagName("h4");
-
-		// Use a regular for-loop
-		for (let i = 0; i < htmlElements.length; i++) {
-
-			// Print the current element
-      console.log(htmlElements[i].innerText);
-		}
-      
-
-document.getElementById("gadget1").innerHTML=htmlElements[0].innerText;
-document.getElementById("gadget2").innerHTML=htmlElements[1].innerText;
-document.getElementById("gadget3").innerHTML=htmlElements[2].innerText;
-document.getElementById("gadget4").innerHTML=htmlElements[3].innerText;
-document.getElementById("gadget5").innerHTML=htmlElements[4].innerText;
-document.getElementById("gadget6").innerHTML=htmlElements[5].innerText;
-document.getElementById("gadget7").innerHTML=htmlElements[6].innerText;
-document.getElementById("gadget8").innerHTML=htmlElements[7].innerText;
-
-
-//Most sold
 
 
 // image slider

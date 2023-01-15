@@ -1,3 +1,6 @@
+.black-list li{
+	color:white
+}
 
 #main{
     margin: 0;
@@ -65,7 +68,7 @@ h2 {
 }
 .carousel .thumb-wrapper {
 	padding: 25px 15px;
-	height : 350px;
+	height : 400px;
 	background: #fff;
 	border-radius: 6px;
 	text-align: center;

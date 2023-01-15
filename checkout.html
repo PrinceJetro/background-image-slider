@@ -33,8 +33,10 @@
                 <div class="col-lg-10 col-12 pt-3">
                     <div class="d-flex">
                         <div class="pt-1"><h4>Comfirm Purchase</h4></div>
-                        <div class="ml-auto p-2"><a href="#" class="text-dark text-decoration-none" id="mobile-font">LOGIN</a></div>
-                        <div class="p-2"><a href="#" class="text-dark text-decoration-none a" id="mobile-font">HELP</a></div>                                            
+                        <div class="ml-auto p-2"><a href="#" class="text-dark text-decoration-none" id="mobile-font">TOTAL</a></div>
+                        <div class="p-2" style="text-align:right"> <div class="px-md-0 px-1" id="tot">
+                          <b><span class="pl-md-4">0</span></b>
+                      </div></div>                                            
                     </div>
                     <div class="d-flex flex-column pt-4">
                         <div><h5 class="text-uppercase font-weight-normal">shopping bag</h5></div>
@@ -652,21 +654,19 @@
                         <div>
                             <a href="index.html"> <button id="reset" class="btn btn-sm bg-light border border-dark"onclick="reset_order()">Reset Order And Return Home</button></a>
                         </div>
-                        <div class="px-md-0 px-1" id="tot">
-                            <b >TOTAL<span class="pl-md-4">$61.78</span></b>
-                        </div>
+                       
                         <div>
                             <form id="form" method="post" enctype="text/plain">
-                                <input type="text" name="Hey there! I am " style="display:none" id="name"> 
-                                <textarea id="index_cart" name="Good1 " rows="4" cols="50" style="display:none">
+                                <input type="text" name="Customer's Name" style="display:none" id="name"> 
+                                <textarea id="index_cart" name=" " rows="4" cols="50" style="display:none">
                                     </textarea>
-                                <textarea id="gadget_product_cart" name="Good2 " rows="4" cols="50" style="display:none">
+                                <textarea id="gadget_product_cart" name=" " rows="4" cols="50" style="display:none">
                                     </textarea>
-                                    <textarea id="men_product_cart" name="Good3 " rows="4" cols="50" style="display:none">
+                                    <textarea id="men_product_cart" name=" " rows="4" cols="50" style="display:none">
                                     </textarea>
-                                    <textarea id="female_product_cart" name="Good4 " rows="4" cols="50" style="display:none">
+                                    <textarea id="female_product_cart" name=" " rows="4" cols="50" style="display:none">
                                     </textarea>
-                                    <textarea id="games_product_cart" name="Good5 " rows="4" cols="50" style="display:none">
+                                    <textarea id="games_product_cart" name=" " rows="4" cols="50" style="display:none">
                                     </textarea>
                                     <textarea id="total" name="Total " rows="4" cols="50" style="display:none">
                                     </textarea>
