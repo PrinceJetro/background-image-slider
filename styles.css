@@ -37,12 +37,13 @@ h2 {
 	
 }
 .carousel .item {
-	color: #747d89;
+	background-color: rgba(0, 123,255);
 	min-height: 325px;
 	text-align: center;
 	overflow: hidden;
 }
 .carousel .thumb-wrapper {
+	color: black;
 	padding: 25px 15px;
 	height : 350px;
 	background: #fff;
@@ -665,7 +666,7 @@ h2 {
 
 	  
 .col-xs-6{
-	border: 1px solid blueviolet
+	border: 1px solid skyblue
 }
 
 
@@ -692,7 +693,8 @@ img {vertical-align: middle;}
 
 /* Caption text */
 .text {
-  color:blue;
+font-family:'Times New Roman', Times, serif;
+  color:black;
   font-size: 14px;
   padding: 8px 12px;
   position: absolute;
