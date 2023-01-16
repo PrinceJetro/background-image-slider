@@ -139,11 +139,6 @@ let product_price = $('.item-price', $(this).parent()).text();
 let product_img = $(this).parents(".col-sm-3").find(".img-fluid").attr('src');
 
 no = window.prompt(`How Many ${product_title} Do You Plan To Purchase? ` )
-if (isNaN(no)) 
-{
-  alert("Must input numbers");
-  return false;
-}
 
   alert(`${product_title} has been added to cart`)
   i++;
